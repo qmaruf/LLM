@@ -58,12 +58,13 @@ class DatesExtractor:
 
 
 if __name__ == "__main__":
-    extractor = DatesExtractor()
     passage1 = "Wikipedia, launched on January 15, 2001, is a free online encyclopedia created through collaborative editing. It provides information on diverse topics, contributed by volunteers worldwide. With millions of articles in multiple languages, Wikipedia has become a vital resource for knowledge sharing, accessible to anyone with internet access."
 
     passage2 = "Google, founded on Sept 4, 1998, by Larry Page and Sergey Brin, has grown into the world's leading search engine. Its services extend beyond search, offering tools like Gmail, Google Maps, and Google Drive. Every day, billions of users rely on Google for information, communication, and productivity."
 
     passage3 = "The first modern automobile was built on 29/01/1886 by Karl Benz, marking the birth of the car industry. Later, on 08/Jun/1948, Porsche unveiled its first car, the 356, revolutionizing the automotive world and setting the foundation for the sports car market we know today."
+
+    extractor = DatesExtractor()
 
     for passage in [passage1, passage2, passage3]:
         result = extractor.extract(passage)
@@ -74,5 +75,5 @@ if __name__ == "__main__":
 Output:
 dates=[Date(day=15, month=1, year=2001)]
 dates=[Date(day=4, month=9, year=1998)]
-dates=[Date(day=15, month=1, year=2001), Date(day=4, month=9, year=1998)]
+dates=[Date(day=29, month=1, year=1886), Date(day=8, month=6, year=1948)]
 """
